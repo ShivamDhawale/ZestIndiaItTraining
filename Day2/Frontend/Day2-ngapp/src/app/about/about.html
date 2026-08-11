@@ -1,0 +1,167 @@
+<!-- 1. INTERPOLATION -->
+
+<h2>Hello {{ name }}</h2>
+
+<p>Age: {{ age }}</p>
+
+
+<hr>
+<br>
+
+
+<!-- 2. PROPERTY BINDING -->
+
+<img [src]="imageUrl" width="150">
+
+
+<hr>
+<br>
+
+
+<!-- 3. EVENT BINDING -->
+
+<p>Count: {{ count }}</p>
+
+<button (click)="increaseCount()">
+  Increase
+</button>
+
+
+<hr>
+<br>
+
+
+<!-- 4. TWO-WAY BINDING -->
+
+<h2>Two Way Binding</h2>
+
+<input [(ngModel)]="username">
+
+<p>You entered: {{ username }}</p>
+
+
+<hr>
+<br>
+
+
+<!-- 5. @IF -->
+
+@if (isLoggedIn) {
+
+  <p>Welcome {{ name }}</p>
+
+}
+
+
+<hr>
+<br>
+
+
+<!-- 6. @ELSE -->
+
+@if (isLoggedIn) {
+
+  <p>You are logged in</p>
+
+} @else {
+
+  <p>Please login</p>
+
+}
+
+
+<hr>
+<br>
+
+
+<!-- 7. @ELSE IF -->
+
+@if (age >= 25) {
+
+  <p>Age is 25 or above</p>
+
+} @else if (age >= 18) {
+
+  <p>Age is between 18 and 24</p>
+
+} @else {
+
+  <p>Below 18</p>
+
+}
+
+
+<hr>
+<br>
+
+
+<!-- 8. @FOR -->
+
+<h2>Students</h2>
+
+@for (student of students; track student.id) {
+
+  <p>{{ student.name }}</p>
+
+}
+
+
+<hr>
+<br>
+
+
+<!-- 9. @EMPTY -->
+
+@for (student of students; track student.id) {
+
+  <p>{{ student.name }}</p>
+
+} @empty {
+
+  <p>No students found.</p>
+
+}
+
+
+<hr>
+<br>
+
+
+<!-- 10. @SWITCH / @CASE -->
+
+@switch (role) {
+
+  @case ('admin') {
+
+    <p>Admin User</p>
+
+  }
+
+  @case ('user') {
+
+    <p>Normal User</p>
+
+  }
+
+  @default {
+
+    <p>Unknown Role</p>
+
+  }
+
+}
+
+
+<hr>
+<br>
+
+
+<!-- 11. CUSTOM PIPE -->
+
+<div>{{ word }}</div>
+
+<div>{{ word | capital }}</div>
+
+
+<hr>
+<br>
