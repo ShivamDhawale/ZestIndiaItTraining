@@ -1,0 +1,52 @@
+<div class="about-container">
+
+  <div class="about-card">
+
+    <h1>About Me</h1>
+
+    <p class="intro">About works!</p>
+
+    <!-- Interpolation -->
+    <div class="info">
+      <p><strong>My Name:</strong> {{ name }}</p>
+      <p><strong>My Address:</strong> {{ address }}</p>
+    </div>
+
+    <!-- Property Binding -->
+    <div class="image-section">
+      <img [src]="imageurl" alt="My Image">
+    </div>
+
+    <!-- Event Binding -->
+    <button class="hit-btn" (click)="event1()">
+      Hit Me
+    </button>
+
+    <!-- Two Way Data Binding -->
+    <div class="email-section">
+      <label>Enter your email</label>
+
+      <input
+        type="text"
+        placeholder="Enter email here..."
+        [(ngModel)]="Email"
+      >
+
+      <p *ngIf="Email">
+        Your email is: <strong>{{ Email }}</strong>
+      </p>
+    </div>
+
+    <!-- ngClass -->
+    <p class="zest" [ngClass]="{'bgColor': isActive}">
+      Zest India
+    </p>
+
+    <!-- Custom Directive -->
+    <div class="hover-box" appHover>
+      Hover over me!
+    </div>
+
+  </div>
+
+</div>
