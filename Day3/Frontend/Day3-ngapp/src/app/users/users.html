@@ -1,0 +1,11 @@
+<h2>Employee List</h2>
+
+<p>Total Employees: {{ users.length }}</p>
+
+@for (user of users; track user.id) {
+  <p>
+    {{ user.id }} -
+    {{ user.name }} -
+    {{ user.email }}
+  </p>
+}
